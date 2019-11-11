@@ -17,7 +17,7 @@ pipeline {
 
     stage('Build') {
       steps {
-           sh '${MAVEN_HOME}/bin/mvn -B verify'
+           sh '${MAVEN_HOME}/bin/mvn clean install'
       }
     }
 
