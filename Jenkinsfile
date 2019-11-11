@@ -9,6 +9,8 @@ pipeline {
 
     stage('Build') {
       steps {
+        pwd()
+        tool 'maven_maven-3.6.2'
         sh 'mvn test'
       }
     }
