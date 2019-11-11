@@ -1,4 +1,7 @@
 pipeline {
+  environment {
+        MAVEN_HOME = tool('M3')
+    }
   agent {
     node {
       label 'master'
@@ -13,10 +16,8 @@ pipeline {
     }
 
     stage('Build') {
-      withEnv(["MAVEN_HOME=/Users/devops/Downloads/apache-maven-3.6.2/bin","PATH+MAVEN_HOME=/Users/devops/Downloads/apache-maven-3.6.2/bin:${MAVEN_HOME}"]) {
       steps {
-                   sh 'mvn test'
-        }
+           sh '${MAVEN_HOME}/bin/mvn -B verify'
       }
     }
 
