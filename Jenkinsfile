@@ -14,7 +14,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        withEnv(["MAVEN_HOME=", "PATH+MAVEN_HOME=:${MAVEN_HOME}"]) {
+        withEnv(["MAVEN_HOME=/Users/devops/Downloads/apache-maven-3.6.2/bin", 
+                 "PATH+MAVEN_HOME=/Users/devops/Downloads/apache-maven-3.6.2/bin:${MAVEN_HOME}"]) {
            sh 'mvn test'
         }
       }
