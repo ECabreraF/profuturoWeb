@@ -14,9 +14,9 @@ pipeline {
 
     stage('Build') {
       steps {
-        pwd()
-        tool 'maven_maven-3.6.2'
-        sh 'mvn test'
+        withEnv(["MAVEN_HOME=", "PATH+MAVEN_HOME=:${MAVEN_HOME}"]) {
+           sh 'mvn test'
+        }
       }
     }
 
