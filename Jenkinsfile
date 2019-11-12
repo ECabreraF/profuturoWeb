@@ -1,7 +1,4 @@
 pipeline {
-  environment {
-        MAVEN_HOME = tool('M3')
-    }
   agent {
     node {
       label 'master'
@@ -17,9 +14,18 @@ pipeline {
 
     stage('Build') {
       steps {
-           sh '${MAVEN_HOME}/bin/mvn clean install'
+        sh '${MAVEN_HOME}/bin/mvn clean install'
       }
     }
 
+    stage('') {
+      steps {
+        build 'JOB_PARAMETERS'
+      }
+    }
+
+  }
+  environment {
+    MAVEN_HOME = tool('M3')
   }
 }
