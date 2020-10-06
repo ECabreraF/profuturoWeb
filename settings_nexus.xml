@@ -19,7 +19,7 @@
     <mirror>
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
-      <url>http://172.22.178.4:8081/nexus/repository/maven-public/</url>
+      <url>http://www.profuturo.mx/nexus/repository/maven-public/</url>
     </mirror>
   </mirrors>
   
